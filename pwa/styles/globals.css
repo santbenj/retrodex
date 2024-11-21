@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('/fonts/PressStart2P-Regular.ttf') format('truetype');
+    /* Assurez-vous que le chemin est correct */
+}
+
+@layer base {
+
+    /*  * {
+        font-family: Poppins;
+    }
+        */
+    * {
+        font-family: 'Press Start 2P';
+    }
+
+    a {
+        @apply no-underline text-cyan-700;
+    }
+}
+
+@layer utilities {
+    .bg-spider-cover {
+        @apply bg-cyan-700 bg-center bg-no-repeat;
+        background-image: url("../public/api-platform/web.svg");
+        background-size: 110%;
+    }
+
+    .ribbon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(13.397459%, -100%) rotate(30deg);
+        /* translateX: 100%*(1-cos(angleRotation) */
+        transform-origin: bottom left;
+    }
+}
