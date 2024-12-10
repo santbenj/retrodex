@@ -1,32 +1,38 @@
-Ce projet est un rétrodex 1G regroupant tous les Pokémons de la 1ére génération avec leurs images, statistiques et types d'origine. 
-On peut aussi créer son propre Pokémon dans le style 1G avec des sprites de Pokémons bug ou modifié un Pokémon importé, on peut aussi supprimer les Pokémons que ce soit les importé ou les créés. 
+# Rétrodex 1G
 
-Le projet utilise API Plateform pour le back-end et Next.js Tailwind CSS pour le front-end, pour le lancer il suffit de lancer : 
+Ce projet est un rétrodex de la première génération regroupant tous les Pokémon de cette génération, avec leurs images, statistiques et types d'origine. 
 
+## Fonctionnalités
+
+- **Création de Pokémon** : Vous pouvez créer votre propre Pokémon dans le style de la première génération en utilisant des sprites de Pokémon bug. Il est également possible de modifier un Pokémon importé ou de supprimer des Pokémon, qu'ils soient importés ou créés.
+
+## Technologies utilisées
+
+Le projet utilise **API Platform** pour le back-end et **Next.js** avec **Tailwind CSS** pour le front-end. Pour lancer l'application, exécutez la commande suivante :
 
 ```
 docker compose up -d --wait
 ```
 
-Puis dans votre navigateur, allez sur https://localhost pour accéder à l'application. 
+Ensuite, ouvrez votre navigateur et accédez à https://localhost pour accéder à l'application.
 
-# Fonctionnement générale 
+## Fonctionnement général
 
-Le projet lance une page d'accueil, dans cette page d'accueil il y a un bouton pour importer les 151 premiers Pokémons. Une fois les 151 Pokémons importé vous serez envoyé vers le rétrodex regroupant tous les pokémons importés puis les pokémons que vous avez créé ou modifiées, vous pouvez modifier les Pokémons du retrodex,le voir plus en détails voir le supprimer si vous le souhaiter
-Il y a une page de création permettant de créer son propre Pokémon avec tous les champs disponibles et des images à disposition, il y a une image par défaut si rien n'est choisi. 
+À l'ouverture de l'application, vous serez accueilli par une page d'accueil contenant un bouton pour importer les 151 premiers Pokémon. Une fois l'importation terminée, vous serez redirigé vers le rétrodex, qui regroupe tous les Pokémon importés ainsi que ceux que vous avez créés ou modifiés.
 
-Beaucoup des données sont extraite de la PokéAPI comme les types, les images sauf celle des Pokémons bug, le nom, les description, le poids et la taille.
-Tout ce qui est statistiques vient d'un fichier json intégré dans le projet,il se trouve dans /pwa/public/stat_pokemons_1G.json
-Je tiens à préciser que les images sont des liens vers le dépot github des images de PokéAPI.
+Vous pouvez modifier les Pokémon du rétrodex, consulter leurs détails et les supprimer si vous le souhaitez. Une page de création est également disponible, vous permettant de créer votre propre Pokémon avec tous les champs nécessaires et des images à disposition. Une image par défaut est fournie si aucune image n'est choisie.
 
-Ce projet est une première version qui est voué à être améliorer à l'avenir, changez bien la configuration serveur/base de donnée si vous voulez vous en servir ailleurs que dans un environnement de développement. 
+La plupart des données proviennent de la PokéAPI, y compris les types et les images (à l'exception des images des Pokémon bug), ainsi que le nom, la description, le poids et la taille. Les statistiques sont extraites d'un fichier JSON intégré dans le projet, situé à /pwa/public/stat_pokemons_1G.json. Notez que les images sont des liens vers le dépôt GitHub des images de PokéAPI.
 
-# Outlils utilisé: 
+Ce projet est une première version qui sera améliorée à l'avenir. N'oubliez pas de modifier la configuration du serveur et de la base de données si vous souhaitez l'utiliser en dehors d'un environnement de développement.
 
-pokéAPI: https://pokeapi.co/?ref=public-apis
-Api Plateform for symfony/ outils nextjs:https://api-platform.com/docs/symfony/
-Tailwind: https://tailwindcss.com/
-Docker: https://www.docker.com/
+## Outils utilisés
+
+    PokéAPI : https://pokeapi.co/?ref=public-apis
+    API Platform for Symfony : https://api-platform.com/docs/symfony/
+    Tailwind CSS : https://tailwindcss.com/
+    Docker : https://www.docker.com/
+
 
 
 
