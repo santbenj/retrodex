@@ -130,7 +130,7 @@ const RetroDex = () => {
       for (let i = 1; i <= 151; i++) {
         try {
           const { name, description, image, weight, height, numpokedex, type1, type2 } = await fetchPokemonData(i);
-          
+
           // Vérifier les doublons
           const exists = existingPokemons.some(p => p.numpokedex === numpokedex && p.importe === true);
           if (exists) {
@@ -191,10 +191,10 @@ const RetroDex = () => {
             Bienvenue dans le RetroDex Pokémon 1G!
           </h1>
           <p className="text-lg text-gray-700 mb-5">
-            Découvrez les 151 Pokémons de la première génération avec leurs images, statistiques et types d'origine.
+            Plongez dans l'univers des 151 Pokémons de la première génération. Découvrez leurs images, statistiques et types d'origine.
           </p>
           <p className="text-lg text-gray-700 mb-5">
-            Vous pouvez également créer votre propre Pokémon, le modifier puis le supprimer, vous pouvez également modifier et supprimer les 151 Pokémons originaux mais il faudra les importer. Il faut juste cliquer sur le bouton ci-dessous.
+            Vous avez également la possibilité de créer votre propre Pokémon, de le modifier ou de le supprimer. De plus, vous pouvez modifier et supprimer les 151 Pokémons originaux, mais cela nécessite de les importer au préalable. Pour commencer, il vous suffit de cliquer sur le bouton ci-dessous.
           </p>
 
           <button
@@ -216,7 +216,7 @@ const RetroDex = () => {
               Services disponibles :
             </h2>
             <div className="flex justify-center flex-wrap">
-            <Card title="Liste Pokémons" url="/retrodex" disabled={loading} />
+              <Card title="Liste Pokémons" url="/retrodex" disabled={loading} />
               <Card title="Création Pokémon" url="/create" disabled={loading} />
               <Card title="API" url="/docs" disabled={loading} />
             </div>

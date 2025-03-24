@@ -68,19 +68,20 @@ const pokemonTypes = [
   "ground", "flying", "psychic", "bug", "ghost", "dragon", "normal"
 ];
 
+
 // Schéma de validation avec Yup
 const validationSchema = Yup.object().shape({
-  name: Yup.string().required('le nom est requis'),
-  type1: Yup.string().required('le Type 1 est requis'),
+  name: Yup.string().required('Le nom est requis. Veuillez entrer un nom valide.'),
+  type1: Yup.string().required('Le Type 1 est requis. Veuillez sélectionner un type.'),
   type2: Yup.string().notOneOf([Yup.ref('type1'), null], 'On ne peut pas avoir deux fois le même type !'),
-  hp: Yup.number().required('ce champ est obligatoire').positive('Il faut un nombre positif'),
-  attack: Yup.number().required('ce champ est obligatoire').positive('Il faut un nombre positif'),
-  defense: Yup.number().required('Dce champ est obligatoire').positive('Il faut un nombre positif'),
-  vitesse: Yup.number().required('ce champ est obligatoire').positive('Il faut un nombre positif'),
-  special: Yup.number().required('Special is required').positive('Il faut un nombre positif'), // Validation pour special
-  poids: Yup.number().required('ce champ est obligatoire').positive('Il faut un nombre positif'),
-  taille: Yup.number().required('ce champ est obligatoire').positive('Il faut un nombre positif'),
-  description: Yup.string().required('Il faut une description'),
+  hp: Yup.number().required('Ce champ est obligatoire. Veuillez entrer un nombre pour les points de vie.').positive('Il faut un nombre positif.'),
+  attack: Yup.number().required('Ce champ est obligatoire. Veuillez entrer un nombre pour l\'attaque.').positive('Il faut un nombre positif.'),
+  defense: Yup.number().required('Ce champ est obligatoire. Veuillez entrer un nombre pour la défense.').positive('Il faut un nombre positif.'),
+  vitesse: Yup.number().required('Ce champ est obligatoire. Veuillez entrer un nombre pour la vitesse.').positive('Il faut un nombre positif.'),
+  special: Yup.number().required('Ce champ est obligatoire. Veuillez entrer un nombre pour le spécial.').positive('Il faut un nombre positif.'),
+  poids: Yup.number().required('Ce champ est obligatoire. Veuillez entrer un nombre pour le poids.').positive('Il faut un nombre positif.'),
+  taille: Yup.number().required('Ce champ est obligatoire. Veuillez entrer un nombre pour la taille.').positive('Il faut un nombre positif.'),
+  description: Yup.string().required('Il faut une description. Veuillez fournir une description détaillée.'),
 });
 
 export const Form: FunctionComponent<Props> = ({ pokemon }) => {
@@ -250,7 +251,7 @@ export const Form: FunctionComponent<Props> = ({ pokemon }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               >
-                <option value="">Select Type</option>
+                <option value="">Selection du 1er Type</option>
                 {pokemonTypes.map((type) => (
                   <option key={type} value={type}>{type}</option>
                 ))}
@@ -271,7 +272,7 @@ export const Form: FunctionComponent<Props> = ({ pokemon }) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               >
-                <option value="">Select Type</option>
+                <option value="">Selection du 2ème Type</option>
                 {pokemonTypes.map((type) => (
                   <option key={type} value={type}>{type}</option>
                 ))}
@@ -413,7 +414,7 @@ export const Form: FunctionComponent<Props> = ({ pokemon }) => {
               <ErrorMessage className="text-xs text-red-500 pt-1" component="div" name="description" />
             </div>
             <div className="mb-2">
-              <label className="text-gray-700 block text-sm font-bold">Select Image</label>
+              <label className="text-gray-700 block text-sm font-bold">Veuillez chosir une image</label>
               <div className="flex flex-wrap">
                 {availableImages.map((image) => (
                   <div key={image} className="m-2">
